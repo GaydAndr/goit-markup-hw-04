@@ -10,6 +10,9 @@
   --btn-bg: #F5F4FA;
   --section-bg: #F5F4FA;
   --card-brdr-color: #eee;
+  --bg-img: #C4C4C4;
+  --icon-color:#AFB1B8;
+  --footer-bg-icon:rgb(255, 255, 255, 0.1);
 }
 
 /* ?visually-hidden */
@@ -66,6 +69,7 @@ img{
 }
 
 .link {
+  display: block;
   text-decoration: none;
 
 }
@@ -74,35 +78,44 @@ img{
   color: var(--accent-color);
 }
 
-.section{
-  padding-top: 94px;
-   padding-bottom: 94px;
+.container{
+  padding: 0 calc(50vw - 593.5px);
 }
 
-.container{
+.section{
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+/* .container{
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-}
+} */
+
+
 
 /* * Joint */
 
 /* Header */
 
 .header{
-  border-bottom : 1px solid #ECECEC;
+
+  display: flex;
+  align-items: center;
   
   position: fixed;
   top: 0;
   width: 100%;
-
+  
+  border-bottom : 1px solid #ECECEC;
   background: var(--bg-color);
 }
-.header .container{
+/* .header .container{
   display: flex;
   align-items: center;
-}
+} */
 
 .header .logo{
   margin-right: 93px;
@@ -142,7 +155,6 @@ img{
 }
 
 .header .link{
-  display: block;
   padding: 32px 0;
 }
 
@@ -162,6 +174,8 @@ img{
 
 .header-contacts .link {
   color: var(--main-txt-color);
+  display: flex;
+  align-items: center;
 }
 
 .header-contacts .link:hover,
@@ -169,10 +183,17 @@ img{
   color: var(--accent-color);
 }
 
+.header-contacts .icon{
+  margin-right: 10px;
+  fill: currentColor;
+}
+
 /* Footer */
 
 .footer{
-  padding: 60px 0;
+  display: flex;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--dark-bg-color);
 }
 
@@ -195,7 +216,28 @@ img{
   color: var(--second-txt-color);
 }
 .footer-contact {
-   color:rgba(var(--second-txt-color), 0.6) ;
+  color:rgba(var(--second-txt-color), 0.6) ;
+}
+
+.info-contact{
+  margin-right: 70px;
+}
+
+.info-social p{
+  margin-top: 12px; 
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: var(--second-txt-color); 
+  text-transform: uppercase;
+}
+
+.info-social .social-links .link{
+  text-align: center;
+  color: var(--second-txt-color);
+  background-color: var(--footer-bg-icon);
 }
 
 /*? Studio */
@@ -208,11 +250,20 @@ img{
   justify-content: center;
   align-items: center;
 
-  height: 100vh;
-  /* height: calc(100vh - 80px); */
-
+  margin-top: 80px;
+  padding-top: 200px;
+  padding-bottom: 200px;
   text-align: center;
-  background-color: var(--dark-bg-color);
+
+  background-color: var(--bg-img);
+  background-image: linear-gradient(
+    to right, 
+    rgb(47, 48, 58, 0.4), 
+    rgb(47, 48, 58, 0.4)),
+   url('../images/studio/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
@@ -271,6 +322,14 @@ img{
 }
 .specifics-item {
   width: calc((100% - 90px) / 4 );
+}
+
+.specifics-icon{
+  padding: 25px 0;
+  margin-bottom: 30px;
+  text-align: center; 
+  background: var(--section-bg);
+  border-radius: 4px;
 }
 
 .specifics-item + .specifics-item{
@@ -346,6 +405,69 @@ img{
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+
+.social-links{
+  display: flex;
+  justify-content: center;
+}
+
+.social-item + .social-item{
+  margin-left: 10px;
+} 
+
+
+
+.social-item .link{
+  width: 44px;
+  height: 44px;
+  padding: 12px 0;
+  color: var(--icon-color);
+  border-radius: 50%;
+}
+
+.social-item .link:hover,
+.social-item .link:focus{
+  color: var(--second-txt-color);
+  background-color: var(--accent-color);
+}
+
+.social-item .icon{
+  fill: currentColor;
+}
+
+/* regular-customers */
+
+.regular-customers .list{
+  display: flex;
+}
+
+.regular-customers-item{
+  width: calc((100% - 150px) / 6 );
+  text-align: center;
+}
+
+.regular-customers-item + .regular-customers-item{
+  margin-left: 30px;
+}
+
+.regular-customers .link{
+  height: 92px;
+  padding: 16px 0;
+  color: var(--icon-color);
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+}
+
+.regular-customers .link:hover,
+.regular-customers .link:focus{
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.regular-customers-item .icon{
+  fill: currentColor;
 }
 
 /* ? Portfolio */
@@ -405,6 +527,13 @@ img{
 
 .card {
   display: block;
+}
+
+.card:hover,
+.card:focus{
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
+  0px 4px 4px rgba(0, 0, 0, 0.06), 
+  1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .card .txt-content{
